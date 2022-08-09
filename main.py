@@ -11,4 +11,9 @@ screen.title("Pong")
 
 paddle_right = Paddle()
 
+screen.listen()
+
+
+
+
 screen.exitonclick()

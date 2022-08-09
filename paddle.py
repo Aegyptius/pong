@@ -14,3 +14,6 @@ class Paddle:
         self.paddle.shapesize(stretch_wid=STRETCH_WIDTH, stretch_len=STRETCH_LENGTH)
         self.paddle.penup()
         self.paddle.goto(X_POSITION, Y_POSITION)
+
+    def paddle_up(self):
+        self.paddle.forward()
