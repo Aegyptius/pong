@@ -4,6 +4,7 @@ SCREENWIDTH = 800
 SCREENHEIGHT = 600
 
 screen = Screen()
-screen.screensize(canvwidth=SCREENWIDTH, canvheight=SCREENHEIGHT)
+screen.bgcolor("black")
+screen.setup(width=SCREENWIDTH, height=SCREENHEIGHT)
 
 screen.exitonclick()
