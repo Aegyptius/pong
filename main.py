@@ -12,7 +12,7 @@ screen.title("Pong")
 paddle_right = Paddle()
 
 screen.listen()
-
+screen.onkey(fun=paddle_right.paddle_up(), key="Up")
 
 
 

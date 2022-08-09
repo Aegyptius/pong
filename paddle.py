@@ -16,4 +16,4 @@ class Paddle:
         self.paddle.goto(X_POSITION, Y_POSITION)
 
     def paddle_up(self):
-        self.paddle.forward()
+        self.paddle.forward(20)
