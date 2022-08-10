@@ -1,5 +1,7 @@
 from turtle import Turtle, Screen
 from paddle import Paddle
+from ball import Ball
+import time
 
 SCREENWIDTH = 800
 SCREENHEIGHT = 600
@@ -16,6 +18,8 @@ screen.tracer(0)
 
 paddle_right = Paddle()
 paddle_left = Paddle(-350)
+ball = Ball()
+
 
 
 screen.listen()
@@ -28,6 +32,8 @@ screen.onkey(fun=paddle_left.paddle_down, key="s")
 game_is_on = True
 while game_is_on:
     screen.update()
+    time.sleep(0.1)
+    ball.move()
 
 
 
