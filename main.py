@@ -34,7 +34,21 @@ while game_is_on:
     ball.move(distance_x, distance_y)
     if ball.ycor() >= 280:
         distance_y *= -1
-    elif ball.ycor() <= -280:
+
+    if ball.ycor() <= -280:
         distance_y *= -1
+
+    if ball.distance(paddle_right) < 25:
+        print("Ping!")
+        distance_x *= -1
+
+    if ball.distance(paddle_left) < 25:
+        print("Ping!")
+        distance_x *= -1
+
+    if ball.xcor() > 380 or ball.xcor() < -380:
+        ball.goto(0, 0)
+        time.sleep(1)
+
 
 screen.exitonclick()
