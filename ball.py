@@ -9,5 +9,6 @@ class Ball(Turtle):
         self.penup()
         self.goto(0, 0)
 
-    def move(self):
-        self.goto(self.xcor() + 20, self.ycor() + 20)
+    def move(self, distance_x, distance_y):
+        self.goto(self.xcor() + distance_x, self.ycor() + distance_y)
+
