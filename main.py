@@ -5,8 +5,6 @@ import time
 
 SCREENWIDTH = 800
 SCREENHEIGHT = 600
-distance_x = 10
-distance_y = 10
 
 screen = Screen()
 screen.bgcolor("black")
@@ -31,24 +29,25 @@ game_is_on = True
 while game_is_on:
     time.sleep(0.1)
     screen.update()
-    ball.move(distance_x, distance_y)
-    if ball.ycor() >= 280:
-        distance_y *= -1
+    ball.move()
+    if ball.ycor() >= 280 or ball.ycor() <= -280:
+        ball.bounce_y()
 
-    if ball.ycor() <= -280:
-        distance_y *= -1
+    # Detect collision with paddle
+    if ball.distance(paddle_right) < 50 and ball.xcor() > 320 or ball.distance(paddle_left) < 50 and ball.xcor() < -320:
+        ball.bounce_x()
 
-    if ball.distance(paddle_right) < 25:
-        print("Ping!")
-        distance_x *= -1
+    #if ball.xcor() > 380 or ball.xcor() < -380:
+    #    ball.goto(0, 0)
+    #    ball.bounce_x()
+    #    time.sleep(1)
 
-    if ball.distance(paddle_left) < 25:
-        print("Ping!")
-        distance_x *= -1
+    # Detect R paddle misses
+    if ball.xcor() > 380:
+        ball.reset_position()
 
-    if ball.xcor() > 380 or ball.xcor() < -380:
-        ball.goto(0, 0)
-        time.sleep(1)
-
+    # Detect L paddle misses
+    if ball.xcor() < -380:
+        ball.reset_position()
 
 screen.exitonclick()
