@@ -7,6 +7,7 @@ import time
 SCREENWIDTH = 800
 SCREENHEIGHT = 600
 
+# Initialize screen
 screen = Screen()
 screen.bgcolor("black")
 screen.setup(width=SCREENWIDTH, height=SCREENHEIGHT)
